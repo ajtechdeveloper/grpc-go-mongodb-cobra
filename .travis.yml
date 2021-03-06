@@ -1,4 +1,4 @@
 language: go
 go:
 - 1.15.x
-script: go build .
+script: go build /home/travis/gopath/src/github.com/ajtechdeveloper/grpc-go-mongodb-cobra/server /home/travis/gopath/src/github.com/ajtechdeveloper/grpc-go-mongodb-cobra/client
