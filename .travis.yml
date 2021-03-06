@@ -1,4 +1,4 @@
 language: go
 go:
 - 1.15.x
-script: make test
+script: go build .
