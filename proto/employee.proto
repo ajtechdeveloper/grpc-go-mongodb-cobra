@@ -1,0 +1,61 @@
+// protoc proto/employee.proto --go_out=plugins=grpc:.
+
+syntax = "proto3";
+
+package employee;
+
+option go_package = ".;employeepb";
+
+message Employee {
+    string id = 1;
+    string name = 2;
+    string department = 3;
+    int32 salary = 4;
+}
+
+message CreateEmployeeRequest {
+    Employee employee = 1; // Employee id blank
+}
+
+message CreateEmployeeResponse {
+    Employee employee = 1; // Employee id filled in
+}
+
+message GetEmployeeRequest {
+    string id = 1;
+}
+
+message GetEmployeeResponse {
+    Employee employee = 1;
+}
+
+message UpdateEmployeeRequest {
+    Employee employee = 1;
+}
+
+message UpdateEmployeeResponse {
+    Employee employee = 1;
+}
+
+message DeleteEmployeeRequest {
+    string id = 1;
+}
+
+message DeleteEmployeeResponse {
+    bool success = 1;
+}
+
+message GetAllEmployeesRequest {}
+
+message GetAllEmployeesResponse {
+    Employee employee = 1;
+}
+
+service EmployeeService {
+    rpc CreateEmployee(CreateEmployeeRequest) returns (CreateEmployeeResponse);
+    rpc GetEmployee(GetEmployeeRequest) returns (GetEmployeeResponse);
+    rpc GetAllEmployees(GetAllEmployeesRequest) returns (stream GetAllEmployeesResponse);
+    rpc UpdateEmployee(UpdateEmployeeRequest) returns (UpdateEmployeeResponse);
+    rpc DeleteEmployee(DeleteEmployeeRequest) returns (DeleteEmployeeResponse);
+}
+
