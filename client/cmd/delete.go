@@ -27,7 +27,7 @@ var deleteCmd = &cobra.Command{
 		if err != nil {
 			return err
 		}
-		fmt.Printf("Succesfully deleted the employee with id %s\n", id)
+		fmt.Printf("Successfully deleted the employee with id %s\n", id)
 		return nil
 	},
 }

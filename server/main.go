@@ -226,7 +226,7 @@ func main() {
 			log.Fatalf("Failed to serve: %v", err)
 		}
 	}()
-	fmt.Println("Server succesfully started on port :50051")
+	fmt.Println("Server successfully started on port :50051")
 
 	// Create a channel to receive OS signals
 	c := make(chan os.Signal)
